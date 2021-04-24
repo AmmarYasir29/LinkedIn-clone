@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  border-bottom: 0.1px solid lightgray;
+  padding: 10px 0 10px 0;
+  top: 0px;
+  position: sticky;
+}
+.header__left {
+  display: flex;
+}
+.header__left > img {
+  object-fit: cover;
+  height: 40px;
+  margin-right: 10px;
+}
+.search_input {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  background-color: #f3f2ef;
+  border-radius: 5px;
+}
+.search_input > input {
+  background: none;
+  border: none;
+  outline: none;
+}
+.header__right {
+  display: flex;
+}
