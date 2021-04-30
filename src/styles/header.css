@@ -6,6 +6,7 @@
   padding: 10px 0 10px 0;
   top: 0px;
   position: sticky;
+  background-color: white;
 }
 .header__left {
   display: flex;
