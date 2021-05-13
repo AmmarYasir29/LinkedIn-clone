@@ -1,0 +1,9 @@
+feedoption{
+  display: flex;
+  justify-content: space-evenly;
+}
+.feedOption__option{
+  display: flex;
+  justify-content: center;
+  
+}

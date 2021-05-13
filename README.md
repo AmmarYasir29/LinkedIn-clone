@@ -1,4 +1,4 @@
-# Linked in clone
+# LinkedIn clone
 
 ## Tools that used : 
 - React js
