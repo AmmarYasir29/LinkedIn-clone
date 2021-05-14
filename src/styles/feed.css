@@ -1,5 +1,5 @@
 .feed {
-  flex: 0.4;
+  flex: 0.6;
 }
 .feed__addPost{
   background-color: white;
@@ -31,4 +31,10 @@
 .feed__addMidea{
   display: flex;
   justify-content: space-evenly;
+}
+.feed__post{
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
 }

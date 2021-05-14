@@ -1,9 +1,13 @@
-feedoption{
-  display: flex;
-  justify-content: space-evenly;
+.feedoption {
+  margin-top: 10px;
+  color: gray;
 }
-.feedOption__option{
+.feedOption__option {
   display: flex;
-  justify-content: center;
-  
+  align-items: center;
+  cursor: pointer;
 }
+.feedOption__option > p {
+  margin-left: 5px;
+}
+

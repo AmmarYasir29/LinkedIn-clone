@@ -1,8 +1,8 @@
 import { Avatar } from "@material-ui/core";
-import React, { ReactElement, ReactNode } from "react";
 import ImageIcon from "@material-ui/icons/Image";
 import "../styles/feed.css";
 import FeedOption from "./FeedOption";
+import Post from "./Post";
 const Feed = () => {
   return (
     <div className="feed">
@@ -12,13 +12,19 @@ const Feed = () => {
           <input type="text" name="" id="" placeholder="start a post" />
         </div>
         <div className="feed__addMidea">
-          <FeedOption Icon={ImageIcon} title="Photo" color="blue"/>
-          <FeedOption Icon={ImageIcon} title="photo" color="blue"/>
-          <FeedOption Icon={ImageIcon} title="photo" color="blue"/>
-          <FeedOption Icon={ImageIcon} title="photo" color="blue"/>
+          <FeedOption Icon={ImageIcon} title="Photo" color="blue" />
+          <FeedOption Icon={ImageIcon} title="photo" color="blue" />
+          <FeedOption Icon={ImageIcon} title="photo" color="blue" />
+          <FeedOption Icon={ImageIcon} title="photo" color="blue" />
         </div>
       </div>
-      <div className="feed__post">Posts</div>
+      <div className="feed__post">
+        <Post
+          name="Ammar Yasir"
+          description="some desc here"
+          message="first Post"
+        />
+      </div>
     </div>
   );
 };
