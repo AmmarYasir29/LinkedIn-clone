@@ -1,40 +1,37 @@
 .feed {
   flex: 0.6;
 }
-.feed__addPost{
+.feed__addPost {
   background-color: white;
   padding: 10px;
-  border-radius:20px;
+  border-radius: 20px;
 }
-.feed__input{
+.feed__input {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
   border-radius: 20px;
   margin: 10px 0;
 }
-.feed__input > input {
+.feed__input > form {
+  width: 100%;
+  margin: 0 10px;
+}
+.feed__input > form > input {
   width: 100%;
   border: 3px solid whitesmoke;
   border-radius: 50px;
   outline: none;
   padding: 15px;
-  margin-left: 10px;
   font-weight: 400px;
   font-size: large;
 }
-.feed__img{
+.feed__img {
   width: 45px !important;
   height: 45px !important;
   object-fit: cover;
 }
-.feed__addMidea{
+.feed__addMidea {
   display: flex;
   justify-content: space-evenly;
-}
-.feed__post{
-  background-color: white;
-  border-radius: 10px;
-  margin: 10px 0;
-  padding: 10px;
 }

@@ -17,11 +17,11 @@ const Post = ({
       <div className="post__header">
         <Avatar />
         <div className="post__info">
-          <h2>name</h2>
-          <p>descrioption</p>
+          <h2>{name}</h2>
+          <p>{description}</p>
         </div>
       </div>
-      <div className="post__body">message here</div>
+      <div className="post__body">{message}</div>
       <div className="post__icon">
         <FeedOption Icon={ThumbUpAltIcon} title="Like" color="gray" />
         <FeedOption Icon={ThumbUpAltIcon} title="Share" color="gray" />
