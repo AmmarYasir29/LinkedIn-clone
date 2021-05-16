@@ -1,7 +1,9 @@
 # LinkedIn clone
 
-## Tools that used : 
+## Tools that used :
+
 - React js
 - Pure css
 - Material UI
 - Typescript
+- Firebase
