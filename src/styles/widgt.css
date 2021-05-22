@@ -1,0 +1,37 @@
+.widgets {
+  flex: 0.2;
+  position: sticky;
+  top: 80px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  height: fit-content;
+  padding-bottom: 10px;
+  margin: 10px;
+}
+
+.widget__header {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px;
+}
+.widget__header > h3 {
+  font-size: 20px;
+}
+.widgte__article {
+  display: flex;
+  cursor: pointer;
+  margin: 10px;
+}
+.widgte__article:hover {
+  background-color: whitesmoke;
+}
+.widget__articleLift {
+  color: blue;
+  font-size: large !important;
+  margin-right: 5px;
+}
+.widget__articleRight > h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
