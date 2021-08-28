@@ -1,5 +1,6 @@
 .feed {
-  flex: 0.6;
+  flex: 0.8;
+  margin: 0 20px;
 }
 .feed__addPost {
   background-color: white;

@@ -3,5 +3,6 @@
 }
 .app_body {
   display: flex;
-  justify-content: space-between;
+  margin: 35px 20px 0 20px;
+  /* max-width: 1200px; */
 }

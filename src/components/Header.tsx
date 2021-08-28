@@ -6,8 +6,17 @@ import HomeIcon from "@material-ui/icons/Home";
 import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
 import ChatIcon from "@material-ui/icons/Chat";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+import { auth } from "../firebase";
+import { useDispatch } from "react-redux";
+import { logout } from "../store/userSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const LogoutOfApp = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
   return (
     <div className="header">
       <div className="header__left">
@@ -26,7 +35,7 @@ const Header = () => {
         <HeaderOption Icon={SupervisorAccountIcon} title="Home" />
         <HeaderOption Icon={ChatIcon} title="My Network" />
         <HeaderOption Icon={NotificationsIcon} title="Notification" />
-        <HeaderOption avatar="http://placekitten.com/200/300" title="Me" />
+        <HeaderOption avatar={true} title="Me" onclick={LogoutOfApp} />
       </div>
     </div>
   );

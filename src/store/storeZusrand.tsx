@@ -6,8 +6,15 @@ import create from "zustand";
 //   logout: (arg1?: any) => void;
 // };
 
-// export const useStore = create<UserState>((set) => ({
+// export const useStore = <UserState>((set) => ({
 //   name: "",
 //   photo: "",
 //   logout: () => set((state) => ({ user: null })),
 // }));
+
+// const useSotre = create(set => ({
+//   user: "test",
+//   password: 123,
+// }));
+
+// export default useSotre;

@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./styles/App.css";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Feed from "./components/Feed";
 import Widget from "./components/Widget";
 import Login from "./components/Login";
-// import { useStore } from "./store/store";
+import { login, logout, selectUser } from "./store/userSlice";
+import { auth } from "./firebase";
 
 function App() {
-  //TODO: add user to store to save info
-  //TODO: integrate user with firebase to detect which page appear
-  const user = true//useStore();
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    auth.onAuthStateChanged(userAuth => {
+      if (userAuth) {
+        dispatch(
+          login({
+            email: userAuth.email,
+            uid: userAuth.uid,
+            displayName: userAuth.displayName,
+            photoUrl: userAuth.photoURL,
+          })
+        );
+      } else {
+        dispatch(logout());
+      }
+    });
+  }, []);
   return (
     <div className="app">
       <Header />

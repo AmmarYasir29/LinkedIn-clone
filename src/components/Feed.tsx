@@ -6,15 +6,21 @@ import FeedOption from "./FeedOption";
 import Post from "./Post";
 import { db } from "../firebase";
 import firebase from "firebase";
+import { selectUser } from "../store/userSlice";
+import { useSelector } from "react-redux";
+import FlipMove from "react-flip-move";
+
 const Feed = () => {
   const [posts, setPosts] = useState<any>([]);
   const [input, setInput] = useState<string>("");
+  const user = useSelector(selectUser);
+
   useEffect(() => {
     db.collection("posts")
       .orderBy("timestamp", "desc")
-      .onSnapshot((snapshot) => {
+      .onSnapshot(snapshot => {
         setPosts(
-          snapshot.docs.map((doc) => ({
+          snapshot.docs.map(doc => ({
             id: doc.id,
             data: doc.data(),
           }))
@@ -24,10 +30,10 @@ const Feed = () => {
   const sendPost = (e: any) => {
     e.preventDefault();
     db.collection("posts").add({
-      name: "Ammar Yasir",
-      description: "here the desc",
+      name: user.displayName,
+      description: user.email,
       message: input,
-      photoUrl: "",
+      photoUrl: user.photoUrl || "",
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
     setInput("");
@@ -41,13 +47,13 @@ const Feed = () => {
             <input
               type="text"
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={e => setInput(e.target.value)}
               placeholder="start a post"
             />
             <button
               type="submit"
               style={{ display: "none" }}
-              onClick={(e) => sendPost(e)}
+              onClick={e => sendPost(e)}
             >
               send
             </button>
@@ -61,27 +67,30 @@ const Feed = () => {
         </div>
       </div>
       <div className="feed__post">
-        {posts.map(
-          ({
-            id,
-            data: { name, description, message, photoUrl },
-          }: {
-            id: number;
-            data: {
-              name: string;
-              description: string;
-              message: string;
-              photoUrl: string;
-            };
-          }) => (
-            <Post
-              key={id}
-              name={name}
-              description={description}
-              message={message}
-            />
-          )
-        )}
+        <FlipMove>
+          {posts.map(
+            ({
+              id,
+              data: { name, description, message, photoUrl },
+            }: {
+              id: number;
+              data: {
+                name: string;
+                description: string;
+                message: string;
+                photoUrl: string;
+              };
+            }) => (
+              <Post
+                key={id}
+                name={name}
+                description={description}
+                message={message}
+                photoUrl={photoUrl}
+              />
+            )
+          )}
+        </FlipMove>
       </div>
     </div>
   );
